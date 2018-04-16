@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\DataContext.cs" />
+    <Compile Include="Migrations\201804161903216_AddedMovies.cs" />
+    <Compile Include="Migrations\201804161903216_AddedMovies.Designer.cs">
+      <DependentUpon>201804161903216_AddedMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804162313538_AddedMovies1.cs" />
+    <Compile Include="Migrations\201804162313538_AddedMovies1.Designer.cs">
+      <DependentUpon>201804162313538_AddedMovies1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804162329103_AddedData.cs" />
+    <Compile Include="Migrations\201804162329103_AddedData.Designer.cs">
+      <DependentUpon>201804162329103_AddedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Movies.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804161903216_AddedMovies.resx">
+      <DependentUpon>201804161903216_AddedMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804162313538_AddedMovies1.resx">
+      <DependentUpon>201804162313538_AddedMovies1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804162329103_AddedData.resx">
+      <DependentUpon>201804162329103_AddedData.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
